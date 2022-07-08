@@ -1,0 +1,44 @@
+@font-face {
+    font-family: 'public-pixel';
+    src: url("assets/fonts/public-pixel.ttf");
+}
+
+body {
+    -webkit-font-smoothing: never;
+    font-family: public-pixel;
+    color: white;
+    background-color: black;
+    width: 50%;
+    margin: auto;
+}
+
+header {
+    text-align: center;
+    font-size: 35px;
+    padding-top: 50px;
+    padding-bottom: 40px;
+}
+
+table {
+    width: 100%;
+    table-layout: fixed;
+    font-size: 25px;
+    border: 0px;
+}
+
+tr:hover {
+    background-color: #4a4a4a;
+}
+
+th {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border: 0px;
+}
+
+td {
+    width: 0.1%;
+    white-space: nowrap;
+    text-align: center;
+    border: 0px;
+}

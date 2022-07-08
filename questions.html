@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Rice Purity Leaderboard</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header id="title">Rice Purity Record - ###</header>
+    <div style="margin: auto; width: 50%; font-size: 20px; margin-top: 40px;">
+        <label id="pw_prompt" for="pass"></label>
+        <input style="width: 100%; font-size: 20px; margin-top: 5px;" type="password" id="pass" name="password" minlength="8" required/>
+    </div>
+</body>
+<script>
+    var v = parent.document.URL.substring(parent.document.URL.indexOf('?') + 1, parent.document.URL.length);
+    id = v.split("id=")[1];
+
+    document.getElementById('title').innerText = `Rice Purity Record - ${id}`
+    document.getElementById('pw_prompt').innerText = `Passsword for ${id}: `;
+</script>
+</html>
