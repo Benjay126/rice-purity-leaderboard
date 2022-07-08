@@ -6,7 +6,7 @@ window.addEventListener("load", () => {
         else { return 'th'; }
     }
 
-    var data = JSON.parse('[{"name": "BEN", "init_score": 51,"curr_score": 50},{"name": "RBY","init_score": 41,"curr_score": 40},{"name": "NOA","init_score": 72,"curr_score": 72},{"name": "MDM","init_score": 63,"curr_score": 60},{"name": "SHN","init_score": 50,"curr_score": 50},{"name": "TOB","init_score": 61,"curr_score": 61},{"name": "KEY","init_score": 63,"curr_score": 63},{"name": "JMS","init_score": 34,"curr_score": 34},{"name": "MLY","init_score": 85,"curr_score": 85},{"name": "JNG","init_score": 81,"curr_score": 81}]');
+    var data = JSON.parse('[{"name": "BEN", "init_score": 50,"curr_score": 50},{"name": "RBY","init_score": 50,"curr_score": 50},{"name": "NOA","init_score": 50,"curr_score": 50},{"name": "MDM","init_score": 50,"curr_score": 50},{"name": "SHN","init_score": 50,"curr_score": 50},{"name": "TOB","init_score": 50,"curr_score": 50},{"name": "KEY","init_score": 50,"curr_score": 50},{"name": "JMS","init_score": 50,"curr_score": 50},{"name": "MLY","init_score": 50,"curr_score": 50},{"name": "JNG","init_score": 50,"curr_score": 50}]');
     data.sort(function (a, b) {
         return (b.init_score / b.curr_score) - (a.init_score / a.curr_score);
     });
@@ -20,7 +20,7 @@ window.addEventListener("load", () => {
         rank = (i + 1) + num_sfx(i + 1);
         entryTemplate = `<tr><td>${rank}</td><th>${name}</th><th>${init_score}</th><th>${curr_score}</th><th>${score_change}%</td></tr>`;
         tableElem.innerHTML += entryTemplate;
-        tableElem.addEventListener("click", function (e) {
+        tableElem.addEventListener("click", (e)=>{
             window.location.href = 'questions.html?id=' + e.target.parentNode.children[1].innerText;
         });
     }
