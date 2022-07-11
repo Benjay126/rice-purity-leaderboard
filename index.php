@@ -38,6 +38,8 @@
 </body>
 <script>
     for(i = 0; i < document.getElementById('table').children; i++) {
+        console.log(i);
+    
         document.getElementById('table').children[i].addEventListener('click', (e) => {
             var id = e.target.children[1].value;
             console.log(id);
