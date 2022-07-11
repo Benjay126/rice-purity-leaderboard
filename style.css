@@ -56,7 +56,12 @@ input[type=number] {
     text-align: center; 
     overflow-y: hidden;
     outline: none;
+    border: none;
 }
+    
+    input:focus {
+        outline: none;
+    }
 
     input[type=number]::-webkit-inner-spin-button,
     input[type=number]::-webkit-outer-spin-button {
