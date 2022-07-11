@@ -15,7 +15,7 @@
 </head>
 <body>
     <header>Rice Purity Leaderboard</header>
-    <form>
+    <form action=>
         <label>Enter pin:</label>
         <div>
             <input type="number" id='pin-1' name='pin-1' oninput='shiftFocus(2)'>
