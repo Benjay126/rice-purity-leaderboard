@@ -18,7 +18,7 @@ window.addEventListener("load", () => {
         curr_score = data[i].curr_score
         score_change = Math.round(((init_score / curr_score) - 1) * 100)
         rank = (i + 1) + num_sfx(i + 1);
-        entryTemplate = `<tr><td>${rank}</td><th>${name}</th><th>${init_score}</th><th>${curr_score}</th><th>${score_change}%</td></tr>`;
+        entryTemplate = ;
         tableElem.innerHTML += entryTemplate;
         tableElem.addEventListener("click", (e)=>{
             window.location.href = 'questions.html?id=' + e.target.parentNode.children[1].innerText;
