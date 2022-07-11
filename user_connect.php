@@ -13,6 +13,7 @@
 		$db = 'rice_purity';
 
 		$conn = mysqli_connect($host, $username, $sql_pw, $db) or die("Unable to connect to '$host'");
+		$pw = $_POST['total-pin'];
 	?>
     <meta charset="utf-8" />
     <title>Rice Purity Leaderboard</title>
@@ -20,7 +21,7 @@
 </head>
 <body>
     <header id="title">Rice Purity Record - ###</header>
-	<div id="questions">
+	<form style="margin: auto; width: 50%; font-size: 20px; margin-top: 40px;" action="user_connect.php" method="post">
 		<ol>
 			<?php
 				$sql = "SELECT * FROM questions";
@@ -29,18 +30,19 @@
 				if ($result->num_rows > 0) {
 				  // output data of each row
 				  while($row = $result->fetch_assoc()) {
-				    echo '<li><input type="checkbox" id=' . $row['id'] . '>' . $row["question"] . '</li>';
+				    echo '<li><input type="checkbox" id=' . $row['id'] . '> ' . $row["question"] . '</li>';
 				  }
 				} else {
 				  echo "0 results";
 				}
-				$conn->close();
-
-				$pw = $_POST['total-pin'];
-				echo $pw;
 			?>
 		</ol>
+		<input type="submit">
+    </form>
 	</div>
 	
 </body>
+<?php
+	$conn->close();
+?>
 </html>
