@@ -5,6 +5,6 @@
     $host = 'localhost:3306';
     $username = 'ben';
     $sql_pw = 'unhinge-naming-whoever-carnation-improving';
-    $db = 'rice_purity'
+    $db = 'rice_purity';
     $conn = mysqli_connect($host, $username, $sql_pw, $db) or die("Unable to connect to '$host'");
 ?>
