@@ -32,7 +32,7 @@
 </body>
 <script>
     function shiftFocus(num) {
-        document.getElementById(`pin-$num`).focus();
+        document.getElementById(`pin-{num}`).focus();
     }
 </script>
 </html>
