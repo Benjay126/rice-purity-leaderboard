@@ -33,7 +33,8 @@
     </form>
 </body>
 <script>
-    var id = <?php echo $_POST['id'] ?>;
+    const urlParams = new URLSearchParams(window.location.search);
+    var id = urlParams.get('id');
     document.getElementById('id').value = id;
 
     function shiftFocus(num) {
