@@ -29,7 +29,7 @@
 			if ($result->num_rows > 0) {
 			    while($row = $result->fetch_assoc()) {
                     $score_change = round((($row['init_score'] / $row['curr_score']) - 1) * 100);
-                    echo '<tr><td></td><th>'.$row['name'].'</th><th>'.$row['init_score'].'</th><th>'.$row['curr_score'].'</th><th>'.$score_change.'%</td></tr>';
+                    echo '<tr><td></td><th>'.strtoupper($row['name']).'</th><th>'.$row['init_score'].'</th><th>'.$row['curr_score'].'</th><th>'.$score_change.'%</td></tr>';
 			    }
 			} else {
 			    echo "0 results";
