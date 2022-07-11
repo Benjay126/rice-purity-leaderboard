@@ -18,11 +18,6 @@ window.addEventListener("load", () => {
         curr_score = data[i].curr_score
         score_change = Math.round(((init_score / curr_score) - 1) * 100)
         rank = (i + 1) + num_sfx(i + 1);
-        entryTemplate = ;
-        tableElem.innerHTML += entryTemplate;
-        tableElem.addEventListener("click", (e)=>{
-            window.location.href = 'questions.html?id=' + e.target.parentNode.children[1].innerText;
-        });
     }
 
     for (let i = 1; i < document.getElementById('table').children.length; i++) {
