@@ -36,5 +36,8 @@
 		$pw = $_POST['total-pin'];
 		echo $pw;
 	?>
+	<?php
+		echo $pw;
+	?>
 </body>
 </html>
