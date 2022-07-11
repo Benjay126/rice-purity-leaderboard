@@ -37,6 +37,8 @@
     </table>
 </body>
 <script>
+    console.log("anything");
+
     for(i = 0; i < document.getElementById('table').children; i++) {
         console.log(i);
     
