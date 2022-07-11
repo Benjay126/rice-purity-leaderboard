@@ -6,7 +6,9 @@
     if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
             if($row['pin'] == $_POST['total-pin']) {
-                echo "pin matches";
+                header("Location: https://matteodimaio.net/rice/rice-purity-leaderboard/questions.php");
+            } else {
+                echo "no match";
             }
         }
     } else {
