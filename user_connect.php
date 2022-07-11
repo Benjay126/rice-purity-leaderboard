@@ -14,14 +14,15 @@
 
 		$conn = mysqli_connect($host, $username, $sql_pw, $db) or die("Unable to connect to '$host'");
 		$pw = $_POST['total-pin'];
+		$id = $_POST['id'];
 	?>
     <meta charset="utf-8" />
     <title>Rice Purity Leaderboard</title>
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header id="title">Rice Purity Record - ###</header>
-	<form style="margin: auto; width: 50%; font-size: 20px; margin-top: 40px;" action="user_connect.php" method="post">
+    <header id="title">Rice Purity Record - <?php echo $id ?></header>
+	<form style="margin: auto; width: 100%; font-size: 20px; margin-top: 40px;" action="user_connect.php" method="post">
 		<ol>
 			<?php
 				$sql = "SELECT * FROM questions";

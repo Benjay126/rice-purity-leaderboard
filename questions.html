@@ -12,10 +12,11 @@
         <label id="pw_prompt" for="pass"></label>
         <div id="pin-div" style="width: 100%;">
             <input style="height: 50px" type="number" id="pin-1" name="pin-1" maxlength="1" oninput="shift_pin_focus(2)">
-            <input style="height: 50px"  type="number" id="pin-2" name="pin-2" maxlength="1" oninput="shift_pin_focus(3)">
-            <input style="height: 50px"  type="number" id="pin-3" name="pin-3" maxlength="1" oninput="shift_pin_focus(4)">
-            <input style="height: 50px"  type="number" id="pin-4" name="pin-4" maxlength="1" oninput="submit_pin()">
-            <input style="visibility: hidden;" type="number" id="total-pin" name="total-pin"/>
+            <input style="height: 50px" type="number" id="pin-2" name="pin-2" maxlength="1" oninput="shift_pin_focus(3)">
+            <input style="height: 50px" type="number" id="pin-3" name="pin-3" maxlength="1" oninput="shift_pin_focus(4)">
+            <input style="height: 50px" type="number" id="pin-4" name="pin-4" maxlength="1" oninput="submit_pin()">
+            <input style="visibility: hidden;" type="number" id="total-pin" name="total-pin" />
+            <input style="visibility: hidden;" type="text" id="id" name="id" />
         </div>
         <input type="submit" />
     </form>
@@ -43,6 +44,7 @@
         pin[2] = document.getElementById('pin-3').value;
         pin[3] = document.getElementById('pin-4').value;
         document.getElementById('total-pin').value = pin.join('');
+        document.getElementById('user').value = id;
     }
 
     function encrypt(str, key) {
