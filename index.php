@@ -18,6 +18,9 @@
             <th>% Change</th>
         </tr>
 		<?php
+            ini_set('display_errors', 1);
+            ini_set('display_startup_errors', 1);
+            error_reporting(E_ALL)
 			$sql = "SELECT * FROM scores";
 			$result = $conn->query($sql);
 			
