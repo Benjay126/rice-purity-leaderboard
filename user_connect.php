@@ -22,17 +22,17 @@
     <form>
         <label>Enter pin:</label>
         <div>
-            <input type="number" id='pin-1' name='pin-1' onclick='shiftFocus(2)'>
-            <input type="number" id='pin-2' name='pin-2' onclick='shiftFocus(3)'>
-            <input type="number" id='pin-3' name='pin-3' onclick='shiftFocus(4)'>
-            <input type="number" id='pin-4' name='pin-4' onclick='submit()'>
+            <input type="number" id='pin-1' name='pin-1' oninput='shiftFocus(2)'>
+            <input type="number" id='pin-2' name='pin-2' oninput='shiftFocus(3)'>
+            <input type="number" id='pin-3' name='pin-3' oninput='shiftFocus(4)'>
+            <input type="number" id='pin-4' name='pin-4' oninput='submit()'>
         </div>
 
     </form>
 </body>
 <script>
     function shiftFocus(num) {
-        document.getElementById(`pin-{num}`).focus();
+        document.getElementById(`pin-${num}`).focus();
     }
 </script>
 </html>
