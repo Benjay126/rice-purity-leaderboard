@@ -42,7 +42,7 @@
         pin[1] = document.getElementById('pin-2').value;
         pin[2] = document.getElementById('pin-3').value;
         pin[3] = document.getElementById('pin-4').value;
-        document.getElementById('total-pin').value = pin.toString();
+        document.getElementById('total-pin').value = pin.join('');
     }
 
     function encrypt(str, key) {
