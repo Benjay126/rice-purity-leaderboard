@@ -41,8 +41,8 @@
         console.log(i);
     
         document.getElementById('table').children[i].addEventListener('click', (e) => {
-            var id = e.target.children[1].innerText;
             console.log(e.target);
+            var id = e.target.children[1].innerText;
             window.location.href = `https://matteodimaio.net/rice/rice-purity-leaderboard/user_connect.php?id=${id}`;
         });
     }
