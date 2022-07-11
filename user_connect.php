@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
@@ -15,7 +14,7 @@
 </head>
 <body>
     <header>Rice Purity Leaderboard</header>
-    <form action="login.php" method="post">
+    <form method="post">
         <label>Enter pin:</label>
         <div>
             <input type="number" id='pin-1' name='pin-1' oninput='shiftFocus(2)'>
@@ -50,3 +49,21 @@
     }
 </script>
 </html>
+<?php
+    $sql = "SELECT * FROM users WHERE name='".$_POST['id']."'";
+    
+    if(isset($_POST['submit'])) {
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {
+                if($row['pin'] == $_POST['total-pin']) {
+                    header("Location: https://matteodimaio.net/rice/rice-purity-leaderboard/questions.php");
+                } else {
+                    echo "no match";
+                }
+            }
+        } else {
+            echo "0 results";
+        }
+    }
+?>
