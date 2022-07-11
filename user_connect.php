@@ -13,7 +13,7 @@
 		ini_set('display_startup_errors', 1);
 		error_reporting(E_ALL);
 
-		$host = 'matteodimaio.net';
+		$host = '172.105.173.88';
 		$username = 'ben';
 		$sql_pw = 'unhinge-naming-whoever-carnation-improving';
 
