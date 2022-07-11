@@ -50,9 +50,8 @@
 </script>
 </html>
 <?php
-    $sql = "SELECT * FROM users WHERE name='".$_POST['id']."'";
-    
     if(isset($_POST['submit'])) {
+        $sql = "SELECT * FROM users WHERE name='".$_POST['id']."'";
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
             while($row = $result->fetch_assoc()) {
