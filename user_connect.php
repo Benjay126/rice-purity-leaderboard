@@ -6,6 +6,7 @@
     <meta charset="utf-8" />
     <title>Rice Purity Leaderboard</title>
     <link rel="stylesheet" href="style.css" />
+	<?php require('sql_connect.php'); ?>
 </head>
 <body>
     <header id="title">Rice Purity Record - <?php echo $id ?></header>
