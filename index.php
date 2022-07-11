@@ -5,13 +5,6 @@
     <meta charset="utf-8" />
     <title>Rice Purity Leaderboard</title>
     <link rel="stylesheet" href="style.css" />
-    <script>
-        function redirect() {
-            var id = this.children[1].value
-            console.log(id);
-            window.location.href = `https://matteodimaio.net/rice/rice-purity-leaderboard/user_connect.php?id=${id}`;
-        }
-    </script>
     <?php require('sql_connect.php'); ?>
 </head>
 <body>
@@ -43,4 +36,17 @@
         </thead>
     </table>
 </body>
+<script>
+    for(i = 0; i < document.getElementById('table').children; i++) {
+        document.getElementById('table').children[i].addEventListener('click', (e) => {
+            var id = e.target.children[1].value;
+            console.log(id);
+            window.location.href = `https://matteodimaio.net/rice/rice-purity-leaderboard/user_connect.php?id=${id}`;
+        });
+    }
+
+
+    function redirect() {
+    }
+</script>
 </html>
