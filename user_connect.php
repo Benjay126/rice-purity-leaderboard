@@ -2,47 +2,29 @@
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<?php require('sql_connext.php'); ?>
     <meta charset="utf-8" />
     <title>Rice Purity Leaderboard</title>
     <link rel="stylesheet" href="style.css" />
-	<?php
-    ini_set('display_errors', 1);
-    ini_set('display_startup_errors', 1);
-    error_reporting(E_ALL)
-    $host = 'localhost:3306';
-    $username = 'ben';
-    $sql_pw = 'unhinge-naming-whoever-carnation-improving';
-    $db = 'rice_purity'
-    $conn = mysqli_connect($host, $username, $sql_pw, $db) or die("Unable to connect to '$host'");
-    $pw = $_POST['total-pin'];
-    $id = $_POST['id'];   
-?>
+    <?php require('sql_connect.php'); ?>
+    <style>
+        form {
+            width: 50%;
+            margin: auto;
+        }
+
+        input[type=number] {
+
+        }
+    </style>
 </head>
 <body>
-    <header id="title">Rice Purity Record - <?php echo $id ?></header>
-	<form style="margin: auto; width: 100%; font-size: 20px; margin-top: 40px;" action="user_connect.php" method="post">
-		<ol>
-			<?php
-				$sql = "SELECT * FROM questions";
-				$result = $conn->query($sql);
-				
-				if ($result->num_rows > 0) {
-				  // output data of each row
-				  while($row = $result->fetch_assoc()) {
-				    echo '<li><input type="checkbox" id=' . $row['id'] . '> ' . $row["question"] . '</li>';
-				  }
-				} else {
-				  echo "0 results";
-				}
-			?>
-		</ol>
-		<input type="submit">
+    <header>Rice Purity Leaderboard</header>
+    <form>
+        <label>Enter pin:</label>
+        <input type="number" id='pin-1' name='pin-1'>
+        <input type="number" id='pin-2' name='pin-2'>
+        <input type="number" id='pin-3' name='pin-3'>
+        <input type="number" id='pin-4' name='pin-4'>
     </form>
-	</div>
-	
 </body>
-<?php
-	$conn->close();
-?>
 </html>
