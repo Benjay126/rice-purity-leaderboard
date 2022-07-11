@@ -44,6 +44,7 @@ td {
 }
 
 input[type=number] {
+    font-family: 'public-pixel';
     background-color: black;
     color: white;
     width: 20%;
@@ -54,6 +55,7 @@ input[type=number] {
     font-size: 40px;
     text-align: center; 
     overflow-y: hidden;
+    outline: none;
 }
 
     input[type=number]::-webkit-inner-spin-button,

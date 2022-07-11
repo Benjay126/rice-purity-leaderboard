@@ -11,10 +11,6 @@
             width: 50%;
             margin: auto;
         }
-
-        input[type=number] {
-            width: 20%;
-        }
     </style>
 </head>
 <body>
@@ -50,7 +46,6 @@
         ];
         var pinStr = pin.join('');
         document.getElementById('total-pin').value = pinStr;
-        alert(pinStr);
     }
 </script>
 </html>
