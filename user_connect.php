@@ -9,7 +9,10 @@
 <body>
     <header id="title">Rice Purity Record - ###</header>
 	<?php
-		error_reporting(-1);
+		ini_set('display_errors', 1);
+		ini_set('display_startup_errors', 1);
+		error_reporting(E_ALL);
+
 		$host = 'matteodimaio.net';
 		$username = 'ben';
 		$sql_pw = 'unhinge-naming-whoever-carnation-improving';
