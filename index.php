@@ -38,11 +38,9 @@
 </body>
 <script>
     for(i = 0; i < document.getElementById('table').children.length; i++) {
-        console.log(i);
-    
         document.getElementById('table').children[i].addEventListener('click', (e) => {
             console.log(e.target);
-            var id = e.target.children[1].innerText;
+            var id = e.target.parentNode.children[1].innerText;
             window.location.href = `https://matteodimaio.net/rice/rice-purity-leaderboard/user_connect.php?id=${id}`;
         });
     }
