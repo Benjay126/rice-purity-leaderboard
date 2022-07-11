@@ -1,5 +1,5 @@
 <?php
-	$pw = $_POST['pin-1'];
+	$pw = $_POST['total-pin'];
 	echo $pw;
 	echo 'test';
 ?>
