@@ -39,7 +39,7 @@
 <script>
     console.log("anything");
 
-    for(i = 0; i < document.getElementById('table').children; i++) {
+    for(i = 0; i < document.getElementById('table').children.length; i++) {
         console.log(i);
     
         document.getElementById('table').children[i].addEventListener('click', (e) => {
