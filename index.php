@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <title>Rice Purity Leaderboard</title>
     <link rel="stylesheet" href="style.css" />
-    <script src='user_redirect.js' />
+    <script type="text/javascript" src='user_redirect.js' />
     <?php require('sql_connect.php'); ?>
 </head>
 <body>
