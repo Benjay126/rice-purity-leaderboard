@@ -5,7 +5,13 @@
     <meta charset="utf-8" />
     <title>Rice Purity Leaderboard</title>
     <link rel="stylesheet" href="style.css" />
-    <script type="text/javascript" src='user_redirect.js' />
+    <script>
+        function redirect() {
+            var id = this.children[1].value
+            console.log(id);
+            window.location.href = `https://matteodimaio.net/rice/rice-purity-leaderboard/user_connect.php?id=${id}`;
+        }
+    </script>
     <?php require('sql_connect.php'); ?>
 </head>
 <body>
