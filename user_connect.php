@@ -25,14 +25,29 @@
             <input type="number" id='pin-1' name='pin-1' oninput='shiftFocus(2)'>
             <input type="number" id='pin-2' name='pin-2' oninput='shiftFocus(3)'>
             <input type="number" id='pin-3' name='pin-3' oninput='shiftFocus(4)'>
-            <input type="number" id='pin-4' name='pin-4' oninput='submit()'>
+            <input type="number" id='pin-4' name='pin-4' oninput='joinPin()'>
+            <input style='visibility: hidden' type="number" id='total-pin' name='total-pin'>
+            <input style='visibility: hidden' type="text" id='id' name='id'>
         </div>
 
     </form>
 </body>
 <script>
+    var id = <?php echo $_POST['id'] ?>;
+    document.getElementById('id').value = id;
+
     function shiftFocus(num) {
         document.getElementById(`pin-${num}`).focus();
+    }
+
+    function joinPin() {
+        const pin = [
+            document.getElementById('pin-1').value,
+            document.getElementById('pin-2').value,
+            document.getElementById('pin-3').value,
+            document.getElementById('pin-4').value
+        ];
+        document.getElementById('total-pin').value = pin.join('');
     }
 </script>
 </html>
