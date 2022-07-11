@@ -10,7 +10,12 @@
     <header id="title">Rice Purity Record - ###</header>
     <form style="margin: auto; width: 50%; font-size: 20px; margin-top: 40px;" action="user_connect.php">
         <label id="pw_prompt" for="pass"></label>
-        <input style="width: 100%; font-size: 20px; margin-top: 5px;" type="password" id="password" name="password" minlength="8" required />
+        <div id="pin-div" style="width: 100%;">
+            <input style="height: 50px" type="number" id="pin-1" name="pin-1" maxlength="1" oninput="shift_pin_focus(2)">
+            <input style="height: 50px"  type="number" id="pin-2" name="pin-2" maxlength="1" oninput="shift_pin_focus(3)">
+            <input style="height: 50px"  type="number" id="pin-3" name="pin-3" maxlength="1" oninput="shift_pin_focus(4)">
+            <input style="height: 50px"  type="number" id="pin-4" name="pin-4" maxlength="1" oninput="submit_pin()">
+        </div>
         <input type="submit" />
     </form>
 </body>
@@ -23,6 +28,21 @@
 
     document.getElementById('title').innerText = `Rice Purity Record - ${id}`
     document.getElementById('pw_prompt').innerText = `Passsword for ${id}: `;
+
+    document.getElementById('pin-1').focus();
+
+    function shift_pin_focus(num) {
+        document.getElementById(`pin-${num}`).focus();
+    }
+
+    function submit_pin() {
+        const pin = [];
+        pin[0] = document.getElementById('pin-1').value;
+        pin[1] = document.getElementById('pin-2').value;
+        pin[2] = document.getElementById('pin-3').value;
+        pin[3] = document.getElementById('pin-4').value;
+        alert(pin.toString());
+    }
 
     function encrypt(str, key) {
         console.log(AES_Encrypt(str, key));

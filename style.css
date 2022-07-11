@@ -42,3 +42,20 @@ td {
     text-align: center;
     border: 0px;
 }
+
+input[type=number] {
+    background-color: black;
+    color: white;
+    width: 20%;
+    padding: 0px;
+    margin: 20px 0px 20px 0px;
+    float: left;
+    font-size: 40px;
+    text-align: center; 
+    overflow-y: hidden;
+}
+
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+    }
