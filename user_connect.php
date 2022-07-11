@@ -32,6 +32,7 @@
     const urlParams = new URLSearchParams(window.location.search);
     var id = urlParams.get('id');
     document.getElementById('id').value = id;
+    document.getElementById('pin-1').focus();
 
     function shiftFocus(num) {
         document.getElementById(`pin-${num}`).focus();
@@ -56,9 +57,24 @@
         if ($result->num_rows > 0) {
             while($row = $result->fetch_assoc()) {
                 if($row['pin'] == $_POST['total-pin']) {
-                    header("Location: https://matteodimaio.net/rice/rice-purity-leaderboard/questions.php");
+                    $postVars = array('id', 'total-pin');
+                    $postData = array();
+                    
+                    foreach($postVars as $name){
+                        if(isset($_POST[$name])){
+                            $postData[$name] = $_POST[$name];
+                        }
+                    }
+                    
+                    $ch = curl_init();
+                    curl_setopt($ch, CURLOPT_URL, "https://matteodimaio.net/rice/rice-purity-leaderboard/questions.php");
+                    curl_setopt($ch, CURLOPT_POST, 1);
+                    curl_setopt($ch, CURLOPT_POSTFIELDS, $postData);
+                    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                    $response = curl_exec($ch);
+                    curl_close($ch);
                 } else {
-                    echo "no match";
+                    echo "Invalid pin";
                 }
             }
         } else {
