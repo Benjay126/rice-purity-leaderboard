@@ -20,6 +20,19 @@
 
 		$conn = mysqli_connect($host, $username, $sql_pw, $db) or die("Unable to connect to '$host'");
 	
+		$sql = "SELECT * FROM questions";
+		$result = $conn->query($sql);
+		
+		if ($result->num_rows > 0) {
+		  // output data of each row
+		  while($row = $result->fetch_assoc()) {
+		    echo "id: " . $row["id"]. " - question: " . $row["question"];
+		  }
+		} else {
+		  echo "0 results";
+		}
+		$conn->close();
+
 		$pw = $_POST['total-pin'];
 		echo $pw;
 	?>
