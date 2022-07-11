@@ -9,14 +9,17 @@
 </head>
 <body>
     <header>Rice Purity Leaderboard</header>
-    <table id="table">
-        <tr>
-            <th>Rank</th>
-            <th>Name</th>
-            <th>Init. Score</th>
-            <th>Curr. Score</th>
-            <th>% Change</th>
-        </tr>
+    <table>
+        <thead>
+            <tr>
+                <th>Rank</th>
+                <th>Name</th>
+                <th>Init. Score</th>
+                <th>Curr. Score</th>
+                <th>% Change</th>
+            </tr>
+        </thead>
+        <tbody id="table">
 		<?php
 			$sql = "SELECT * FROM scores";
 			$result = $conn->query($sql);
@@ -30,6 +33,16 @@
 			    echo "0 results";
 			}
 		?>
+        </thead>
     </table>
 </body>
+<script>
+    for (var i = 0; i < document.getElementById('table').children.length; i++) {
+        document.getElementById('table').children.addEventListener('click', (e) => {
+            var id = e.target.children[1].value
+            console.log(id);
+            window.location.href = `https://matteodimaio.net/rice/rice-purity-leaderboard/user_connect.php?id=${id}`;
+        });
+    }​
+</script>
 </html>
