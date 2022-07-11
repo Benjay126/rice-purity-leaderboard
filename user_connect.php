@@ -13,7 +13,7 @@
         }
 
         input[type=number] {
-
+            width: 20%;
         }
     </style>
 </head>
@@ -21,10 +21,13 @@
     <header>Rice Purity Leaderboard</header>
     <form>
         <label>Enter pin:</label>
-        <input type="number" id='pin-1' name='pin-1'>
-        <input type="number" id='pin-2' name='pin-2'>
-        <input type="number" id='pin-3' name='pin-3'>
-        <input type="number" id='pin-4' name='pin-4'>
+        <div>
+            <input type="number" id='pin-1' name='pin-1'>
+            <input type="number" id='pin-2' name='pin-2'>
+            <input type="number" id='pin-3' name='pin-3'>
+            <input type="number" id='pin-4' name='pin-4'>
+        </div>
+
     </form>
 </body>
 </html>
