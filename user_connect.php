@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+    <header id="title">Rice Purity Record - ###</header>
 	<?php
 		error_reporting(-1);
 		$host = 'matteodimaio.net';
@@ -18,6 +19,5 @@
 		echo $pw;
 		echo 'test';
 	?>
-    <header id="title">Rice Purity Record - ###</header>
 </body>
 </html>
