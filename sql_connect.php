@@ -7,6 +7,4 @@
     $sql_pw = 'unhinge-naming-whoever-carnation-improving';
     $db = 'rice_purity'
     $conn = mysqli_connect($host, $username, $sql_pw, $db) or die("Unable to connect to '$host'");
-    $pw = $_POST['total-pin'];
-    $id = $_POST['id'];   
 ?>
