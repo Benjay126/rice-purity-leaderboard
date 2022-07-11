@@ -48,7 +48,9 @@
             document.getElementById('pin-3').value,
             document.getElementById('pin-4').value
         ];
-        document.getElementById('total-pin').value = pin.join('');
+        var pinStr = pin.join('');
+        document.getElementById('total-pin').value = pinStr;
+        alert(pinStr);
     }
 </script>
 </html>
