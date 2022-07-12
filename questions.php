@@ -15,7 +15,7 @@
 			$u_query = "UPDATE users SET answers = '".$a_str."' WHERE name='".$_GET['id']."'";
 			//echo $u_query;
 			$conn->query($u_query);
-			header("refresh:1;url=https://matteodimaio.net/rice/rice-purity-leaderboard/index.php");
+			header("refresh:0;url=https://matteodimaio.net/rice/rice-purity-leaderboard/index.php");
 		}
 	?>
 </head>
