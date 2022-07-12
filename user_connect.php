@@ -43,7 +43,7 @@
         for (i = 1; i <= numPins; i++) { pin.push(document.getElementById(`${pinType}-pin-${i}`).value); }
         var pinStr = pin.join('');
         document.getElementById(`total-${pinType}-pin`).value = pinStr;
-        //document.getElementById('form').submit();
+        document.getElementById('form').submit();
     }
 
     const urlParams = new URLSearchParams(window.location.search);
