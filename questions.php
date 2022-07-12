@@ -12,7 +12,9 @@
 				array_push($a_array, (isset($_POST[strval($i)]) ? 1 : 0));
 			}
 			$a_str =  implode('', $a_array);
-			header("refresh:1;url=https://matteodimaio.net/rice/rice-purity-leaderboard/index.php?id=".$a_str);
+			$u_query = "UPDATE users SET answers = '".$a_str."' WHERE name='".$_GET['id']."''";
+			$conn->query($u_query);
+			header("refresh:1;url=https://matteodimaio.net/rice/rice-purity-leaderboard/index.php");
 		}
 	?>
 </head>
