@@ -8,7 +8,7 @@
 </head>
 <body>
     <header id="title">Rice Purity Record - <?php echo $_GET['id'] ?></header>
-	<form style="margin: auto; width: 100%; font-size: 20px; margin-top: 40px;" action="user_connect.php" method="post">
+	<form style="margin: auto; width: 100%; font-size: 20px; margin-top: 40px;" method="post">
 		<ol>
 			<?php
 				$a_query = "SELECT answers FROM users WHERE name='".$_GET['id']."'";
@@ -31,9 +31,14 @@
 		<input type="submit">
     </form>
 	</div>
-	
 </body>
 <?php
-	$conn->close();
+	if(isset($_POST['submit'])) {
+		$a_array = array();
+		for($i = 1; $i <= 100; $i++) {
+			array_push($a_array, $_POST[strval($i)]);
+		}
+		echo implode('', $a_array);
+	}
 ?>
 </html>
