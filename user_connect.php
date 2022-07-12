@@ -17,10 +17,10 @@
     <form id='form' name='form' method="post">
         <label>Enter pin:</label>
         <div>
-            <input type="number" id='pin-1' name='pin-1' oninput='shiftFocus(2)'>
-            <input type="number" id='pin-2' name='pin-2' oninput='shiftFocus(3)'>
-            <input type="number" id='pin-3' name='pin-3' oninput='shiftFocus(4)'>
-            <input type="number" id='pin-4' name='pin-4' oninput='joinPin()'>
+            <input type="number" maxlength=1 id='pin-1' name='pin-1' oninput='shiftFocus(2)'>
+            <input type="number" maxlength=1 id='pin-2' name='pin-2' oninput='shiftFocus(3)'>
+            <input type="number" maxlength=1 id='pin-3' name='pin-3' oninput='shiftFocus(4)'>
+            <input type="number" maxlength=1 id='pin-4' name='pin-4' oninput='joinPin()'>
             <input type="hidden" value="submit" name="btnSubmit">
             <input style='visibility: hidden' type="number" id='total-pin' name='total-pin'>
             <input style='visibility: hidden' type="text" id='id' name='id'>
