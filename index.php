@@ -41,7 +41,7 @@
 		}
 	?>
 
-    var row = echo '<tr><td></td><th></th><th></th><th></th><th>%</td></tr>';
+    var row = '<tr><td></td><th></th><th></th><th></th><th>%</td></tr>';
     for(i = 0; i < document.getElementById('table').children.length; i++) {
         document.getElementById('table').children[i].addEventListener('click', (e) => {
             console.log(e.target);
