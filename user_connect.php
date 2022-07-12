@@ -21,7 +21,7 @@
             <input type="number" id='pin-2' name='pin-2' oninput='shiftFocus(3)'>
             <input type="number" id='pin-3' name='pin-3' oninput='shiftFocus(4)'>
             <input type="number" id='pin-4' name='pin-4' oninput='joinPin()'>
-            <input style='visibility: hidden' type="submit" name="btnSubmit">
+            <input type="submit" name="btnSubmit">
             <input style='visibility: hidden' type="number" id='total-pin' name='total-pin'>
             <input style='visibility: hidden' type="text" id='id' name='id'>
         </div>
