@@ -57,7 +57,7 @@
         if ($result->num_rows > 0) {
             while($row = $result->fetch_assoc()) {
                 if($row['pin'] == $_POST['total-pin']) {
-                    $postVars = array('id', 'total-pin');
+                    /*$postVars = array('id', 'total-pin');
                     $postData = array();
                     
                     foreach($postVars as $name){
@@ -72,7 +72,8 @@
                     curl_setopt($ch, CURLOPT_POSTFIELDS, $postData);
                     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
                     $response = curl_exec($ch);
-                    curl_close($ch);
+                    curl_close($ch);*/
+                    header("Location: 'https://matteodimaio.net/rice/rice-purity-leaderboard/questions.php?id=".$_POST['id']."'");
                 } else {
                     echo "Invalid pin";
                 }
