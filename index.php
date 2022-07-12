@@ -35,9 +35,18 @@
     </table>
 </body>
 <script>
+    var sortByChange = function(a, b) {
+        return a.children[4].innerText.localeCompare(b.children[4].innerText);
+    }
+    
+    var list = $("#table > tr").get();
+    list.sort(sortByChange);
+    for (var i = 0; i < list.length; i++) {
+        list[i].parentNode.appendChild(list[i]);
+    }
+
     for(i = 0; i < document.getElementById('table').children.length; i++) {
         document.getElementById('table').children[i].addEventListener('click', (e) => {
-            console.log(e.target);
             var id = e.target.parentNode.children[1].innerText;
             window.location.href = `https://matteodimaio.net/rice/rice-purity-leaderboard/user_connect.php?id=${id}`;
         });
