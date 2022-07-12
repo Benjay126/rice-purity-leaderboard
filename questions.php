@@ -7,13 +7,19 @@
     <link rel="stylesheet" href="style.css" />
 	<?php
 		if(isset($_POST['submit'])) {
+			$unticked = 0;
 			$a_array = array();
 			for($i = 1; $i <= 100; $i++) {
+				if(isset($_POST[strval($i)])) {
+					array_push($a_array, 1);
+				} else {
+					array_push($a_array, 0);
+					$unticked++;
+				}
 				array_push($a_array, (isset($_POST[strval($i)]) ? 1 : 0));
 			}
 			$a_str =  implode('', $a_array);
-			$u_query = "UPDATE users SET answers = '".$a_str."' WHERE name='".$_GET['id']."'";
-			//echo $u_query;
+			$u_query = "UPDATE users SET answers = '".$a_str."', curr_score = '".$unticked."' WHERE name='".$_GET['id']."'";
 			$conn->query($u_query);
 			header("refresh:0;url=https://matteodimaio.net/rice/rice-purity-leaderboard/index.php");
 		}
