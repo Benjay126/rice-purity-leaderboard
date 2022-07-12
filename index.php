@@ -8,7 +8,10 @@
     <?php require('sql_connect.php');  ?>
 </head>
 <body>
-    <header>Rice Purity Leaderboard</header>
+    <header>
+        <a href="https://matteodimaio.net/rice/rice-purity-leaderboard/index.php">Rice Purity Leaderboard</a>
+        <a style="float: right" href="https://matteodimaio.net/rice/rice-purity-leaderboard/add_user.php">Add User</a>
+    </header>
     <table>
         <thead>
             <tr>
