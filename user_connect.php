@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <title>Rice Purity Leaderboard</title>
     <link rel="stylesheet" href="style.css" />
+    <script href="script.js" type="text/javascript"></script>
     <?php require('sql_connect.php'); ?>
     <style>
         form {
@@ -17,12 +18,12 @@
     <form id='form' name='form' method="post">
         <label>Enter pin:</label>
         <div>
-            <input type="number" maxlength=1 id='pin-1' name='pin-1' oninput='shiftFocus(2)'>
-            <input type="number" maxlength=1 id='pin-2' name='pin-2' oninput='shiftFocus(3)'>
-            <input type="number" maxlength=1 id='pin-3' name='pin-3' oninput='shiftFocus(4)'>
-            <input type="number" maxlength=1 id='pin-4' name='pin-4' oninput='joinPin()'>
+            <input type="number" maxlength=1 id='user-pin-1' name='user-pin-1' oninput='shiftFocus(2, "user")'>
+            <input type="number" maxlength=1 id='user-pin-2' name='user-pin-2' oninput='shiftFocus(3, "user")'>
+            <input type="number" maxlength=1 id='user-pin-3' name='user-pin-3' oninput='shiftFocus(4, "user")'>
+            <input type="number" maxlength=1 id='user-pin-4' name='user-pin-4' oninput='joinPin(4, "user")'>
             <input type="hidden" value="submit" name="btnSubmit">
-            <input style='visibility: hidden' type="number" id='total-pin' name='total-pin'>
+            <input style='visibility: hidden' type="number" id='total-user-pin' name='total-user-pin'>
             <input style='visibility: hidden' type="text" id='id' name='id'>
         </div>
 
@@ -33,31 +34,8 @@
     var id = urlParams.get('id');
     document.getElementById('id').value = id;
     document.getElementById('pin-1').focus();
-
-    function squarePins() {
-        for(i = 1; i < 5; i++) {
-            var p = document.getElementById(`pin-${i}`);
-            dimDiff = p.offsetWidth - p.offsetHeight;
-            p.style.paddingTop = (dimDiff / 2) + 'px';
-            p.style.paddingBottom = (dimDiff / 2) + 'px';
-        }
-    }
-    window.addEventListener('resize', squarePins);
-    squarePins();
-
-    function shiftFocus(num) { document.getElementById(`pin-${num}`).focus(); }
-
-    function joinPin() {
-        const pin = [
-            document.getElementById('pin-1').value,
-            document.getElementById('pin-2').value,
-            document.getElementById('pin-3').value,
-            document.getElementById('pin-4').value
-        ];
-        var pinStr = pin.join('');
-        document.getElementById('total-pin').value = pinStr;
-        document.getElementById('form').submit();
-    }
+    window.addEventListener('resize', squarePins(4, "user"));
+    squarePins(4, "user");
 </script>
 </html>
 <?php
