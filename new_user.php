@@ -59,13 +59,11 @@
 
     function shiftFocus(num, pinType) { document.getElementById(`${pinType}-pin-${num}`).focus(); }
 
-    function joinPin() {
-        const pin = [
-            document.getElementById('pin-1').value,
-            document.getElementById('pin-2').value,
-            document.getElementById('pin-3').value,
-            document.getElementById('pin-4').value
-        ];
+    function joinPin(pinType, numPins) {
+        const pin = [];
+        for(i = 1; i <= numPins; i++) {
+            pin.push(document.getElementById(`${pinType}-pin-${i}`).value);
+        }
         var pinStr = pin.join('');
         document.getElementById('total-pin').value = pinStr;
         //document.getElementById('form').submit();
