@@ -9,8 +9,8 @@
 </head>
 <body>
     <header>
-        <a href="https://matteodimaio.net/rice/rice-purity-leaderboard/index.php">Rice Purity Leaderboard</a>
-        <a style="float: right" href="https://matteodimaio.net/rice/rice-purity-leaderboard/add_user.php">Add User</a>
+        <div style="width: 50%"><a href="https://matteodimaio.net/rice/rice-purity-leaderboard/index.php">Rice Purity Leaderboard</a></div>
+        <div style="width: 25%; text-align: right; font-size: 30px"><a href="https://matteodimaio.net/rice/rice-purity-leaderboard/new_user.php">Add User</a></div>
     </header>
     <table>
         <thead>
