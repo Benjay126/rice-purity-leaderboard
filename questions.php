@@ -21,7 +21,7 @@
 					$answer = $a_result->fetch_assoc();
 					$a_array = str_split($answer['answers']);
 					while($row = $q_result->fetch_assoc()) {
-						echo '<li><input type="checkbox" id="'.$row['id'].'"'.($a_array[$row['id'] - 1] == 1 ? ' checked' : '').'> '.$row["question"].'</li>';
+						echo '<li><input type="checkbox" id="'.$row['id'].'" name="'.$row['id'].'"'.($a_array[$row['id'] - 1] == 1 ? ' checked' : '').'> '.$row["question"].'</li>';
 					}
 				} else {
 					echo "0 results";
