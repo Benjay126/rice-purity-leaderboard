@@ -23,17 +23,17 @@
             <input style='visibility: hidden' type="text" id='total-id-pin' name='total-id-pin'>
         </div>
         <div>
-            <input type="number" maxlength=1 id='user-pin-1' name='pin-1' oninput='shiftFocus(2, "user")'>
-            <input type="number" maxlength=1 id='user-pin-2' name='pin-2' oninput='shiftFocus(3, "user")'>
-            <input type="number" maxlength=1 id='user-pin-3' name='pin-3' oninput='shiftFocus(4, "user")'>
-            <input type="number" maxlength=1 id='user-pin-4' name='pin-4' oninput='joinPin("user", 4)'>
+            <input type="number" min="0" max="9" id='user-pin-1' name='pin-1' oninput='shiftFocus(2, "user")'>
+            <input type="number" min="0" max="9" id='user-pin-2' name='pin-2' oninput='shiftFocus(3, "user")'>
+            <input type="number" min="0" max="9" id='user-pin-3' name='pin-3' oninput='shiftFocus(4, "user")'>
+            <input type="number" min="0" max="9" id='user-pin-4' name='pin-4' oninput='joinPin("user", 4)'>
             <input style='visibility: hidden' type="number" id='total-user-pin' name='total-user-pin'>
         </div>
         <div>
-            <input type="number" maxlength=1 id='admin-pin-1' name='pin-1' oninput='shiftFocus(2, "admin")'>
-            <input type="number" maxlength=1 id='admin-pin-2' name='pin-2' oninput='shiftFocus(3, "admin")'>
-            <input type="number" maxlength=1 id='admin-pin-3' name='pin-3' oninput='shiftFocus(4, "admin")'>
-            <input type="number" maxlength=1 id='admin-pin-4' name='pin-4' oninput='joinPin("admin", 4)'>
+            <input type="number" min="0" max="9" id='admin-pin-1' name='pin-1' oninput='shiftFocus(2, "admin")'>
+            <input type="number" min="0" max="9" id='admin-pin-2' name='pin-2' oninput='shiftFocus(3, "admin")'>
+            <input type="number" min="0" max="9" id='admin-pin-3' name='pin-3' oninput='shiftFocus(4, "admin")'>
+            <input type="number" min="0" max="9" id='admin-pin-4' name='pin-4' oninput='joinPin("admin", 4)'>
             <input style='visibility: hidden' type="number" id='total-admin-pin' name='total-admin-pin'>
         </div>
             <input type="hidden" value="submit" name="btnSubmit">
