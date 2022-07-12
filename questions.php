@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header id="title">Rice Purity Record - <?php echo $_POST['id'] ?></header>
+    <header id="title">Rice Purity Record - <?php echo $_GET['id'] ?></header>
 	<form style="margin: auto; width: 100%; font-size: 20px; margin-top: 40px;" action="user_connect.php" method="post">
 		<ol>
 			<?php
