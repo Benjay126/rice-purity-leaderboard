@@ -49,14 +49,14 @@ input[type=number] {
     color: white;
     width: 20%;
     height: 40px;
-    padding: 0px;
+    padding: 0px 5px 0px 5px;
     margin: 20px 0px 20px 0px;
     float: left;
     font-size: 40px;
     text-align: center; 
     overflow-y: hidden;
     outline: none;
-    border: none;
+    border: 1px solid grey;
 }
     
     input:focus {
