@@ -56,7 +56,7 @@
         ];
         var pinStr = pin.join('');
         document.getElementById('total-pin').value = pinStr;
-        document.getElementById('form').submit();
+        //document.getElementById('form').submit();
     }
 </script>
 </html>
@@ -84,7 +84,7 @@
                     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
                     $response = curl_exec($ch);
                     curl_close($ch);*/
-                    //header("Location: https://matteodimaio.net/rice/rice-purity-leaderboard/questions.php?id=".$_POST['id']);
+                    header("Location: https://matteodimaio.net/rice/rice-purity-leaderboard/questions.php?id=".$_POST['id']);
                 } else {
                     echo "Invalid pin";
                 }
