@@ -34,12 +34,12 @@
 </body>
 <?php
 	if(isset($_POST['submit'])) {
-		print_r($_POST);
 		$a_array = array();
 		for($i = 1; $i <= 100; $i++) {
 			array_push($a_array, (isset($_POST[strval($i)]) ? 1 : 0));
 		}
 		$a_str =  implode('', $a_array);
+		echo $a_str;
 		header("Location: https://matteodimaio.net/rice/rice-purity-leaderboard/index.php?id=".$a_str);
 	}
 ?>
