@@ -17,10 +17,10 @@
     <form id='form' name='form' method="post">
         <label>Enter pin:</label>
         <div>
-            <input type="number" maxlength=1 id='user-pin-1' name='user-pin-1' oninput='shiftFocus(2, "user")'>
-            <input type="number" maxlength=1 id='user-pin-2' name='user-pin-2' oninput='shiftFocus(3, "user")'>
-            <input type="number" maxlength=1 id='user-pin-3' name='user-pin-3' oninput='shiftFocus(4, "user")'>
-            <input type="number" maxlength=1 id='user-pin-4' name='user-pin-4' oninput='joinPin(4, "user")'>
+            <input type="text" pattern="\d*" maxlength=1 id='user-pin-1' name='user-pin-1' oninput='shiftFocus(2, "user")'>
+            <input type="text" pattern="\d*" maxlength=1 id='user-pin-2' name='user-pin-2' oninput='shiftFocus(3, "user")'>
+            <input type="text" pattern="\d*" maxlength=1 id='user-pin-3' name='user-pin-3' oninput='shiftFocus(4, "user")'>
+            <input type="text" pattern="\d*" maxlength=1 id='user-pin-4' name='user-pin-4' oninput='joinPin(4, "user")'>
             <input type="hidden" value="submit" name="btnSubmit">
             <input style='visibility: hidden' type="number" id='total-user-pin' name='total-user-pin'>
             <input style='visibility: hidden' type="text" id='id' name='id'>
