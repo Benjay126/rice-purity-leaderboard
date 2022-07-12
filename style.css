@@ -43,23 +43,10 @@ td {
     border: 0px;
 }
 
-a {}
-
-    a:link {
-        text-decoration: none;
-    }
-
-    a:visited {
-        text-decoration: none;
-    }
-
-    a:hover {
-        text-decoration: none;
-    }
-
-    a:active {
-        text-decoration: none;
-    }
+a {
+    text-decoration: none;
+    color: white;
+}
 
 input[type=number] {
     font-family: 'public-pixel';
