@@ -35,6 +35,7 @@
     document.getElementById('pin-1').focus();
 
     function squarePins() {
+        console.log('square the pin');
         for(i = 1; i < 5; i++) {
             var p = document.getElementById(`pin-${i}`);
             dimDiff = p.offsetWidth - p.offsetHeight;
