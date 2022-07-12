@@ -50,9 +50,9 @@
             p.style.paddingBottom = (dimDiff / 2) + 'px';
         }
     }
-    window.addEventListener('resize', squarePins('id'));
-    window.addEventListener('resize', squarePins('user'));
-    window.addEventListener('resize', squarePins('admin'));
+    window.addEventListener('resize', squarePins(3, 'id'));
+    window.addEventListener('resize', squarePins(4, 'user'));
+    window.addEventListener('resize', squarePins(4, 'admin'));
     squarePins('id');
     squarePins('user');
     squarePins('admin');
