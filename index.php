@@ -30,7 +30,7 @@
 		if ($result->num_rows > 0) {
             while($row = $result->fetch_assoc()) { ?>
                 users.push({
-                     'id': <?php echo $row['id'] ?>,
+                     'id': <?php echo $row['id']; ?>,
                      'init_score': <?php echo $row['init_score']; ?>,
                      'curr_score': <?php echo $row['curr_score']; ?>,
                      'score_change': <?php round((($row['init_score'] / $row['curr_score']) - 1) * 100); ?>
