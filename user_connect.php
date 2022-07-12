@@ -35,7 +35,6 @@
     document.getElementById('pin-1').focus();
 
     function squarePins() {
-        console.log('square the pin');
         for(i = 1; i < 5; i++) {
             var p = document.getElementById(`pin-${i}`);
             dimDiff = p.offsetWidth - p.offsetHeight;
@@ -63,6 +62,7 @@
 </html>
 <?php
     if(isset($_POST['btnSubmit'])) {
+        echo 'isset';
         $sql = "SELECT * FROM users WHERE name='".$_POST['id']."'";
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
