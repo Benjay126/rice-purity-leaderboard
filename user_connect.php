@@ -56,7 +56,7 @@
         ];
         var pinStr = pin.join('');
         document.getElementById('total-pin').value = pinStr;
-        //document.getElementById('form').submit();
+        document.getElementById('form').submit();
     }
 </script>
 </html>
