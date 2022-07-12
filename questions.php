@@ -11,16 +11,21 @@
 	<form style="margin: auto; width: 100%; font-size: 20px; margin-top: 40px;" action="user_connect.php" method="post">
 		<ol>
 			<?php
-				$sql = "SELECT * FROM questions";
-				$result = $conn->query($sql);
+				$a_query = "SELECT answer FROM users WHERE name='".$_GET['id']."'";
+				$a_result = $conn->query($a_query);
+
+				$q_query = "SELECT * FROM questions";
+				$q_result = $conn->query($q_query);
 				
-				if ($result->num_rows > 0) {
-				  // output data of each row
-				  while($row = $result->fetch_assoc()) {
-				    echo '<li><input type="checkbox" id=' . $row['id'] . '> ' . $row["question"] . '</li>';
-				  }
+				if ($q_result->num_rows > 0 and $a_result->num_rows > 0) {
+					$answer = $q_result->fetch_assoc()
+					echo $answer;
+					$a_array = str_split($answer);
+					while($row = $q_result->fetch_assoc()) {
+						echo '<li><input type="checkbox" id=' . $row['id'] . '> ' . $row["question"] . '</li>';
+					}
 				} else {
-				  echo "0 results";
+					echo "0 results";
 				}
 			?>
 		</ol>
