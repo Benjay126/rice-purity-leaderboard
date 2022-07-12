@@ -37,7 +37,7 @@
 </body>
 <script>
     var sortByChange = function(a, b) {
-        return parseInt(a.children[4].innerText.replace('%', '')).localeCompare(parseInt(b.children[4].innerText.replace('%', '')));
+        return a.children[4].innerText.replace('%', '').localeCompare(b.children[4].innerText.replace('%', ''));
     }
     
     var list = $("#table > tr").get();
