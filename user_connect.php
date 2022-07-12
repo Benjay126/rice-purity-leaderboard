@@ -33,7 +33,7 @@
     const urlParams = new URLSearchParams(window.location.search);
     var id = urlParams.get('id');
     document.getElementById('id').value = id;
-    document.getElementById('pin-1').focus();
+    document.getElementById('user-pin-1').focus();
     window.addEventListener('resize', squarePins(4, "user"));
     squarePins(4, "user");
 </script>
