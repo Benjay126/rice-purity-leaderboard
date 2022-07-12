@@ -62,7 +62,6 @@
 </html>
 <?php
     if(isset($_POST['btnSubmit'])) {
-        echo 'isset';
         $sql = "SELECT * FROM users WHERE name='".$_POST['id']."'";
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
