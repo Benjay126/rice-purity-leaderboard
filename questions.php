@@ -20,8 +20,8 @@
 				
 				if ($q_result->num_rows > 0 and $a_result->num_rows > 0) {
 					$answer = $q_result->fetch_assoc();
-					echo $answer['message'];
-					$a_array = str_split($answer['message']);
+					echo $answer['answers'];
+					$a_array = str_split($answer['answers']);
 					while($row = $q_result->fetch_assoc()) {
 						echo '<li><input type="checkbox" id=' . $row['id'] . '> ' . $row["question"] . '</li>';
 					}
