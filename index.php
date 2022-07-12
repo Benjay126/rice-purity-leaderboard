@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <title>Rice Purity Leaderboard</title>
     <link rel="stylesheet" href="style.css" />
+    <script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
     <?php require('sql_connect.php');  ?>
 </head>
 <body>
