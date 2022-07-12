@@ -12,31 +12,33 @@
         <div style="width: 50%"><a href="https://matteodimaio.net/rice/rice-purity-leaderboard/index.php">Rice Purity Leaderboard</a></div>
         <div style="width: 25%; text-align: right; font-size: 30px"><a href="https://matteodimaio.net/rice/rice-purity-leaderboard/new_user.php">Add User</a></div>
     </header>
-    <table>
-        <thead>
-            <tr>
-                <th>Rank</th>
-                <th>Name</th>
-                <th>Init. Score</th>
-                <th>Curr. Score</th>
-                <th>% Change</th>
-            </tr>
-        </thead>
-        <tbody id="table">
-		<?php
-	        $sql = "SELECT name, init_score, curr_score FROM users";
-	        $result = $conn->query($sql);
-			if ($result->num_rows > 0) {
-			    while($row = $result->fetch_assoc()) {
-                    $score_change = round((($row['init_score'] / $row['curr_score']) - 1) * 100);
-                    echo '<tr><td></td><th>'.strtoupper($row['name']).'</th><th>'.$row['init_score'].'</th><th>'.$row['curr_score'].'</th><th>'.$score_change.'%</td></tr>';
-			    }
-			} else {
-			    echo "0 results";
-			}
-		?>
-        </thead>
-    </table>
+    <div class="main-content">
+        <table>
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Name</th>
+                    <th>Init. Score</th>
+                    <th>Curr. Score</th>
+                    <th>% Change</th>
+                </tr>
+            </thead>
+            <tbody id="table">
+	    	<?php
+	            $sql = "SELECT name, init_score, curr_score FROM users";
+	            $result = $conn->query($sql);
+	    		if ($result->num_rows > 0) {
+	    		    while($row = $result->fetch_assoc()) {
+                        $score_change = round((($row['init_score'] / $row['curr_score']) - 1) * 100);
+                        echo '<tr><td></td><th>'.strtoupper($row['name']).'</th><th>'.$row['init_score'].'</th><th>'.$row['curr_score'].'</th><th>'.$score_change.'%</td></tr>';
+	    		    }
+	    		} else {
+	    		    echo "0 results";
+	    		}
+	    	?>
+            </thead>
+        </table>
+    </div>
 </body>
 <script>
     function numSuffix(num) {
