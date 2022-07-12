@@ -5,6 +5,16 @@
     <meta charset="utf-8" />
     <title>Rice Purity Leaderboard</title>
     <link rel="stylesheet" href="style.css" />
+	<?php
+		if(isset($_POST['submit'])) {
+			$a_array = array();
+			for($i = 1; $i <= 100; $i++) {
+				array_push($a_array, (isset($_POST[strval($i)]) ? 1 : 0));
+			}
+			$a_str =  implode('', $a_array);
+			header("refresh:1;url=https://matteodimaio.net/rice/rice-purity-leaderboard/index.php?id=".$a_str);
+		}
+	?>
 </head>
 <body>
     <header id="title">Rice Purity Record - <?php echo $_GET['id'] ?></header>
@@ -32,14 +42,4 @@
     </form>
 	</div>
 </body>
-<?php
-	if(isset($_POST['submit'])) {
-		$a_array = array();
-		for($i = 1; $i <= 100; $i++) {
-			array_push($a_array, (isset($_POST[strval($i)]) ? 1 : 0));
-		}
-		$a_str =  implode('', $a_array);
-		header("refresh:1;url=https://matteodimaio.net/rice/rice-purity-leaderboard/index.php?id=".$a_str);
-	}
-?>
 </html>
