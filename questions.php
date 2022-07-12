@@ -13,6 +13,7 @@
 			<?php
 				$a_query = "SELECT answer FROM users WHERE name='".$_GET['id']."'";
 				$a_result = $conn->query($a_query);
+				echo $a_result;
 
 				$q_query = "SELECT * FROM questions";
 				$q_result = $conn->query($q_query);
