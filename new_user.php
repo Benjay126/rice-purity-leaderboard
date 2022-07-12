@@ -19,21 +19,21 @@
         <div>
             <input type="text" maxlength=1 id='id-pin-1' name='pin-1' oninput='shiftFocus(2, "id")'>
             <input type="text" maxlength=1 id='id-pin-2' name='pin-2' oninput='shiftFocus(3, "id")'>
-            <input type="text" maxlength=1 id='id-pin-4' name='pin-4' oninput='joinPin()'>
+            <input type="text" maxlength=1 id='id-pin-4' name='pin-4' oninput='joinPin(3)'>
             <input style='visibility: hidden' type="text" id='id' name='id'>
         </div>
         <div>
             <input type="number" maxlength=1 id='user-pin-1' name='pin-1' oninput='shiftFocus(2, "user")'>
             <input type="number" maxlength=1 id='user-pin-2' name='pin-2' oninput='shiftFocus(3, "user")'>
             <input type="number" maxlength=1 id='user-pin-3' name='pin-3' oninput='shiftFocus(4, "user")'>
-            <input type="number" maxlength=1 id='user-pin-4' name='pin-4' oninput='joinPin()'>
+            <input type="number" maxlength=1 id='user-pin-4' name='pin-4' oninput='joinPin(4)'>
             <input style='visibility: hidden' type="number" id='total-admin-pin' name='total-admin-pin'>
         </div>
         <div>
             <input type="number" maxlength=1 id='admin-pin-1' name='pin-1' oninput='shiftFocus(2, "admin")'>
             <input type="number" maxlength=1 id='admin-pin-2' name='pin-2' oninput='shiftFocus(3, "admin")'>
             <input type="number" maxlength=1 id='admin-pin-3' name='pin-3' oninput='shiftFocus(4, "admin")'>
-            <input type="number" maxlength=1 id='admin-pin-4' name='pin-4' oninput='joinPin()'>
+            <input type="number" maxlength=1 id='admin-pin-4' name='pin-4' oninput='joinPin(4)'>
             <input style='visibility: hidden' type="number" id='total-admin-pin' name='total-admin-pin'>
         </div>
             <input type="hidden" value="submit" name="btnSubmit">
@@ -42,8 +42,8 @@
 <script>
     document.getElementById('id-pin-1').focus();
 
-    function squarePins(pinType) {
-        for(i = 1; i < 5; i++) {
+    function squarePins(pinType, numPins) {
+        for(i = 1; i <= numPins; i++) {
             var p = document.getElementById(`${pinType}-pin-${i}`);
             dimDiff = p.offsetWidth - p.offsetHeight;
             p.style.paddingTop = (dimDiff / 2) + 'px';
