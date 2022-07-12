@@ -36,6 +36,13 @@
     </table>
 </body>
 <script>
+    function numSuffix(num) {
+        if (num % 10 == 1 && num != 11) { return 'st'; }
+        else if (num % 10 == 2 && num != 12) { return 'nd'; }
+        else if (num % 10 == 3 && num != 13) { return 'rd'; }
+        else { return 'th'; }
+    }
+
     var sortByChange = function(a, b) {
         var aChange = parseInt(a.children[4].innerText.replace('%', ''));
         var bChange = parseInt(b.children[4].innerText.replace('%', ''));
@@ -49,6 +56,7 @@
     }
 
     for(i = 0; i < document.getElementById('table').children.length; i++) {
+        document.getElementById('table').children[i].children[0].innerText = (i + 1) + numSuffix(i + 1);
         document.getElementById('table').children[i].addEventListener('click', (e) => {
             var id = e.target.parentNode.children[1].innerText;
             window.location.href = `https://matteodimaio.net/rice/rice-purity-leaderboard/user_connect.php?id=${id}`;
