@@ -9,7 +9,6 @@ body {
     color: white;
     background-color: black;
     width: 100%;
-    margin: auto;
 }
 
 header {
@@ -50,6 +49,7 @@ a {
 
 .main-content {
     width: 50%;
+    margin: auto;
 }
 
 input[type=number] {
