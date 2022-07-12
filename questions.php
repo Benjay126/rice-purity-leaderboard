@@ -18,7 +18,7 @@
 				$q_result = $conn->query($q_query);
 				
 				if ($q_result->num_rows > 0 and $a_result->num_rows > 0) {
-					$answer = $q_result->fetch_assoc()
+					$answer = $q_result->fetch_assoc();
 					echo $answer;
 					$a_array = str_split($answer);
 					while($row = $q_result->fetch_assoc()) {
