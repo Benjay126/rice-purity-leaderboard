@@ -20,10 +20,9 @@
 				
 				if ($q_result->num_rows > 0 and $a_result->num_rows > 0) {
 					$answer = $a_result->fetch_assoc();
-					echo $answer['answers'];
 					$a_array = str_split($answer['answers']);
 					while($row = $q_result->fetch_assoc()) {
-						echo '<li><input type="checkbox" id=' . $row['id'] . '> ' . $row["question"] . '</li>';
+						echo '<li><input type="checkbox" id='.$row['id'].($a_array[$row['id']] == 1 ? 'checked').'> '.$row["question"].'</li>';
 					}
 				} else {
 					echo "0 results";
