@@ -1,5 +1,4 @@
 ﻿<!DOCTYPE html>
-
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
@@ -21,7 +20,7 @@
         </thead>
         <tbody id="table">
 		<?php
-			$sql = "SELECT * FROM scores";
+			$sql = "SELECT name, init_score, curr_score FROM users";
 			$result = $conn->query($sql);
 			
 			if ($result->num_rows > 0) {
