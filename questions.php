@@ -34,7 +34,7 @@
 </body>
 <?php
 	if(isset($_POST['submit'])) {
-		echo $_POST['1'];
+		print_r($_POST);
 		$a_array = array();
 		for($i = 1; $i <= 100; $i++) {
 			array_push($a_array, $_POST[strval($i)]);
