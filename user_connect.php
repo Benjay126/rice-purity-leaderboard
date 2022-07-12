@@ -34,12 +34,17 @@
     document.getElementById('id').value = id;
     document.getElementById('pin-1').focus();
 
-    for(i = 1; i < 5; i++) {
-        var p = document.getElementById(`pin-${i}`);
-        dimDiff = p.offsetWidth - p.offsetHeight;
-        p.style.paddingTop = (dimDiff / 2) + 'px';
-        p.style.paddingBottom = (dimDiff / 2) + 'px';
+    function squarePins() {
+        for(i = 1; i < 5; i++) {
+            var p = document.getElementById(`pin-${i}`);
+            dimDiff = p.offsetWidth - p.offsetHeight;
+            p.style.paddingTop = (dimDiff / 2) + 'px';
+            p.style.paddingBottom = (dimDiff / 2) + 'px';
+        }
     }
+
+    window.addEventListener('resize', squarePins);
+    squarePins();
 
     function shiftFocus(num) {
         document.getElementById(`pin-${num}`).focus();
