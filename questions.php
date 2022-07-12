@@ -11,7 +11,7 @@
 	<form style="margin: auto; width: 100%; font-size: 20px; margin-top: 40px;" action="user_connect.php" method="post">
 		<ol>
 			<?php
-				$a_query = "SELECT answer FROM users WHERE name='".$_GET['id']."'";
+				$a_query = "SELECT answers FROM users WHERE name='".$_GET['id']."'";
 				$a_result = $conn->query($a_query);
 				echo $a_query;
 
