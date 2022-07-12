@@ -14,7 +14,7 @@
 </head>
 <body>
     <header>Rice Purity Leaderboard</header>
-    <form id='form' method="post">
+    <form name='form' method="post">
         <label>Enter pin:</label>
         <div>
             <input type="number" id='pin-1' name='pin-1' oninput='shiftFocus(2)'>
@@ -57,7 +57,7 @@
         ];
         var pinStr = pin.join('');
         document.getElementById('total-pin').value = pinStr;
-        document.getElementById('form').submit();
+        document.form.submit();
     }
 </script>
 </html>
