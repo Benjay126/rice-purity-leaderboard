@@ -39,7 +39,7 @@
 			array_push($a_array, $_POST[strval($i)]);
 		}
 		$a_str =  implode('', $a_array);
-		header("Location: https://matteodimaio.net/rice/rice-purity-leaderboard/index.php?id=".$a_str]);
+		header("Location: https://matteodimaio.net/rice/rice-purity-leaderboard/index.php?id=".$a_str);
 	}
 ?>
 </html>
