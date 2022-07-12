@@ -38,7 +38,8 @@
 		for($i = 1; $i <= 100; $i++) {
 			array_push($a_array, $_POST[strval($i)]);
 		}
-		echo implode('', $a_array);
+		$a_str =  implode('', $a_array);
+		header("Location: https://matteodimaio.net/rice/rice-purity-leaderboard/index.php?id=".$a_str]);
 	}
 ?>
 </html>
