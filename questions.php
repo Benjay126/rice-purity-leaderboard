@@ -26,7 +26,7 @@
 	?>
 </head>
 <body>
-    <header id="title">Rice Purity</br>Answer Record - <?php echo $_GET['id'] ?></header>
+    <header id="title">Rice Purity Leaderboard</br>Answer Record - <?php echo $_GET['id'] ?></header>
 	<div class="main-content">
 		<form style="margin: auto; width: 100%; font-size: 20px; margin-top: 40px;" method="post">
 			<ol>
