@@ -52,7 +52,7 @@ a {
     margin: auto;
 }
 
-input[type=texts] {
+input[type=text] {
     font-family: 'public-pixel';
     background-color: black;
     color: white;
