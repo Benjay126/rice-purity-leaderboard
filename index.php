@@ -10,7 +10,7 @@
 <body>
     <header>
         <div style="margin-left: 25%; width: 50%; float: left"><a href="https://matteodimaio.net/rice/rice-purity-leaderboard/index.php">Rice Purity Leaderboard</a></div>
-        <div style="width: 25%; text-align: right; font-size: 30px"><a href="https://matteodimaio.net/rice/rice-purity-leaderboard/new_user.php">Add User</a></div>
+        <div style="width: 25%; text-align: right; float: right; font-size: 30px"><a href="https://matteodimaio.net/rice/rice-purity-leaderboard/new_user.php">Add User</a></div>
     </header>
     <div class="main-content">
         <table>
