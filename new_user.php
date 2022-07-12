@@ -19,7 +19,7 @@
         <div>
             <input type="text" maxlength=1 id='id-pin-1' name='pin-1' oninput='shiftFocus(2, "id")'>
             <input type="text" maxlength=1 id='id-pin-2' name='pin-2' oninput='shiftFocus(3, "id")'>
-            <input type="text" maxlength=1 id='id-pin-3' name='pin-4' oninput='joinPin("id", 3)'>
+            <input type="text" maxlength=1 id='id-pin-3' name='pin-3' oninput='joinPin("id", 3)'>
             <input style='visibility: hidden' type="text" id='id' name='total-id-pin'>
         </div>
         <div>
