@@ -53,10 +53,10 @@ input[type=number] {
     margin: 20px 0px 20px 0px;
     float: left;
     font-size: 40px;
-    text-align: center; 
+    text-align: center;
     overflow-y: hidden;
-    outline: none;
     border: 1px solid grey;
+    outline: none;
 }
     
     input:focus {
