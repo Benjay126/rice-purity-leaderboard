@@ -29,7 +29,15 @@
 	            $result = $conn->query($sql);
 	    		if ($result->num_rows > 0) {
 	    		    while($row = $result->fetch_assoc()) {
-                        if($row['curr_score'] != 0) { $score_change = 100 - round(($row['curr_score'] / $row['init_score']) * 100); }
+                        $init_score = $row['init_score'];
+                        $curr_score = $row['curr_score'];
+                        if($row['init_score'] != -1) { 
+                            $score_change = 100 - round(($row['curr_score'] / $row['init_score']) * 100); 
+                        } else {
+                            $score_change = '-';
+                            $init_score = '-';
+                            $curr_score = '-';
+                        }
                         echo '<tr><td></td><th>'.strtoupper($row['name']).'</th><th>'.$row['init_score'].'</th><th>'.$row['curr_score'].'</th><th>'.$score_change.'%</td></tr>';
 	    		    }
 	    		} else {
