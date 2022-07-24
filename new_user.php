@@ -53,6 +53,7 @@
         }
     }
     function joinPin(numPins, pinType, submit) {
+        console.log(submit);
         const pin = [];
         for (i = 1; i <= numPins; i++) { pin.push(document.getElementById(`${pinType}-pin-${i}`).value); }
         var pinStr = pin.join('');
