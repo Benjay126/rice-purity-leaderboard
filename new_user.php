@@ -55,7 +55,7 @@
 </html>
 <?php
     if(isset($_POST['btnSubmit'])) {
-        $empty_answers = array()
+        $empty_answers = array();
         for($i = 1; $i <= 100; $i++) {
             array_push($empty_answers, 0);
         }
