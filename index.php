@@ -29,7 +29,6 @@
 	            $result = $conn->query($sql);
 	    		if ($result->num_rows > 0) {
 	    		    while($row = $result->fetch_assoc()) {
-                        $score_change = 100;
                         if($row['curr_score'] != 0) { $score_change = 100 - round(($row['curr_score'] / $row['init_score']) * 100); }
                         echo '<tr><td></td><th>'.strtoupper($row['name']).'</th><th>'.$row['init_score'].'</th><th>'.$row['curr_score'].'</th><th>'.$score_change.'%</td></tr>';
 	    		    }
