@@ -58,7 +58,7 @@
         for (i = 1; i <= numPins; i++) { pin.push(document.getElementById(`${pinType}-pin-${i}`).value); }
         var pinStr = pin.join('');
         document.getElementById(`total-${pinType}-pin`).value = pinStr;
-        if(submit) { document.getElementById('form').submit(); }
+        if(submit == false) { document.getElementById('form').submit(); }
     }
 
     document.getElementById('id-pin-1').focus();
