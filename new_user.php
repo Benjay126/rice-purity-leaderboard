@@ -16,13 +16,14 @@
 <body>
     <header>Rice Purity Leaderboard - New User</header>
     <form id='form' name='form' method="post">
-        <label>User </label>
+        <label>Create Username</label>
         <div>
             <input type="text" pattern="\d*" maxlength="1" id='id-pin-1' name='pin-1' oninput='shiftFocus(2, "id")'>
             <input type="text" pattern="\d*" maxlength="1" id='id-pin-2' name='pin-2' oninput='shiftFocus(3, "id")'>
             <input type="text" pattern="\d*" maxlength="1" id='id-pin-3' name='pin-3' oninput='joinPin(3, "id")'>
             <input style='visibility: hidden' type="text" id='total-id-pin' name='total-id-pin'>
         </div>
+        <label>Create User Pin:</label>
         <div>
             <input type="text" pattern="\d*" maxlength="1" id='user-pin-1' name='pin-1' oninput='shiftFocus(2, "user")'>
             <input type="text" pattern="\d*" maxlength="1" id='user-pin-2' name='pin-2' oninput='shiftFocus(3, "user")'>
@@ -30,6 +31,7 @@
             <input type="text" pattern="\d*" maxlength="1" id='user-pin-4' name='pin-4' oninput='joinPin(4, "user")'>
             <input style='visibility: hidden' type="number" id='total-user-pin' name='total-user-pin'>
         </div>
+        <label>Enter Admin Pin:</label>
         <div>
             <input type="text" pattern="\d*" maxlength="1" id='admin-pin-1' name='pin-1' oninput='shiftFocus(2, "admin")'>
             <input type="text" pattern="\d*" maxlength="1" id='admin-pin-2' name='pin-2' oninput='shiftFocus(3, "admin")'>
@@ -53,34 +55,34 @@
 </html>
 <?php
     if(isset($_POST['btnSubmit'])) {
-        $sql = "SELECT * FROM users WHERE name='".$_POST['id']."'";
-        $result = $conn->query($sql);
-        if ($result->num_rows > 0) {
-            while($row = $result->fetch_assoc()) {
-                if($row['pin'] == $_POST['total-pin']) {
-                    /*$postVars = array('id', 'total-pin');
-                    $postData = array();
-                    
-                    foreach($postVars as $name){
-                        if(isset($_POST[$name])){
-                            $postData[$name] = $_POST[$name];
-                        }
-                    }
-                    
-                    $ch = curl_init();
-                    curl_setopt($ch, CURLOPT_URL, "https://matteodimaio.net/rice/rice-purity-leaderboard/questions.php");
-                    curl_setopt($ch, CURLOPT_POST, 1);
-                    curl_setopt($ch, CURLOPT_POSTFIELDS, $postData);
-                    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-                    $response = curl_exec($ch);
-                    curl_close($ch);*/
-                    header("Location: https://matteodimaio.net/rice/rice-purity-leaderboard/questions.php?id=".$_POST['id']);
-                } else {
-                    echo "Invalid pin";
+        $empty_answers = array()
+        for($i = 1; $i <= 100; $i++) {
+            array_push($empty_answers, 0);
+        }
+        $unique_user_sql = "SELECT * FROM users WHERE name='".$_POST['id']."'";
+        $add_user_sql = "INSERT INTO users (name, init_score, curr_score, pin, answers) VALUES (".$_POST['total-id-pin'].", -1, -1, ".$_POST['total-user-pin'].", ".implode("", $empty_answers).")";
+        $unique_user = $conn->query($unique_user_sql);
+        if (unique_user->num_rows = 0) {
+            $add_user = $conn->query($add_user_sql);
+            /*$postVars = array('id', 'total-pin');
+            $postData = array();
+            
+            foreach($postVars as $name){
+                if(isset($_POST[$name])){
+                    $postData[$name] = $_POST[$name];
                 }
             }
+            
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, "https://matteodimaio.net/rice/rice-purity-leaderboard/questions.php");
+            curl_setopt($ch, CURLOPT_POST, 1);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $postData);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            $response = curl_exec($ch);
+            curl_close($ch);*/
+            header("Location: https://matteodimaio.net/rice/rice-purity-leaderboard/questions.php?id=".$_POST['id']);
         } else {
-            echo "0 results";
+            echo "User already added.";
         }
     }
 ?>
