@@ -60,7 +60,7 @@
             array_push($empty_answers, 0);
         }
         $unique_user_sql = "SELECT * FROM users WHERE name='".$_POST['id']."'";
-        $add_user_sql = "INSERT INTO users (name, init_score, curr_score, pin, answers) VALUES (".$_POST['total-id-pin'].", -1, -1, ".$_POST['total-user-pin'].", ".implode("", $empty_answers).")";
+        $add_user_sql = "INSERT INTO users (name, init_score, curr_score, pin, answers) VALUES (".$_POST['total-id-pin'].", -1, -1, ".$_POST['total-user-pin'].", '".implode("", $empty_answers)."')";
         $unique_user = $conn->query($unique_user_sql);
         if (unique_user->num_rows = 0) {
             $add_user = $conn->query($add_user_sql);
