@@ -90,6 +90,7 @@
         }
         $unique_user_sql = "SELECT * FROM users WHERE name='".$_POST['total-user-pin']."'";
         $add_user_sql = "INSERT INTO users (name, init_score, curr_score, pin, answers) VALUES (".$_POST['total-id-pin'].", -1, -1, ".$_POST['total-user-pin'].", '".implode("", $empty_answers)."')";
+        echo $add_user_sql;
         $unique_user = $conn->query($unique_user_sql);
         if (empty($unique_user)) {
             $add_user = $conn->query($add_user_sql);
