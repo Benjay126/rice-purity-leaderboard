@@ -94,7 +94,7 @@
         $unique_user = $conn->query($unique_user_sql);
         if (empty($unique_user)) {
             $add_user = $conn->query($add_user_sql);
-            /*$postVars = array('id', 'total-pin');
+            $postVars = array('id', 'total-pin');
             $postData = array();
             
             foreach($postVars as $name){
@@ -109,8 +109,7 @@
             curl_setopt($ch, CURLOPT_POSTFIELDS, $postData);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             $response = curl_exec($ch);
-            curl_close($ch);*/
-            header("Location: https://matteodimaio.net/rice/rice-purity-leaderboard/questions.php?id=".$_POST['id']);
+            curl_close($ch);
         } else {
             echo "User already added.";
         }

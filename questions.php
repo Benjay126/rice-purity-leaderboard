@@ -26,12 +26,12 @@
 	?>
 </head>
 <body>
-    <header id="title">Rice Purity Leaderboard</br>Answer Record - <?php echo $_GET['id'] ?></header>
+    <header id="title">Rice Purity Leaderboard</br>Answer Record - <?php echo $_POST['id'] ?></header>
 	<div class="main-content">
 		<form style="margin: auto; width: 100%; font-size: 20px; margin-top: 40px;" method="post">
 			<ol>
 				<?php
-					$a_query = "SELECT answers FROM users WHERE name='".$_GET['id']."'";
+					$a_query = "SELECT answers FROM users WHERE name='".$_POST['id']."'";
 					$a_result = $conn->query($a_query);
 
 					$q_query = "SELECT * FROM questions";
