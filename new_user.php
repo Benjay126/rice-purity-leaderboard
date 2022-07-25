@@ -23,6 +23,7 @@
                 <input type="text" pattern="\d*" maxlength="1" id='id-pin-2' name='pin-2' oninput='shiftFocus(3, "id")'>
                 <input type="text" pattern="\d*" maxlength="1" id='id-pin-3' name='pin-3' oninput='joinPin(3, "id", false)'>
                 <input style='visibility: hidden' type="text" id='total-id-pin' name='total-id-pin'>
+                <br>
             </div>
             <div>
                 <label>Create User Pin:</label>
@@ -31,6 +32,7 @@
                 <input type="text" pattern="\d*" maxlength="1" id='user-pin-3' name='pin-3' oninput='shiftFocus(4, "user")'>
                 <input type="text" pattern="\d*" maxlength="1" id='user-pin-4' name='pin-4' oninput='joinPin(4, "user", false)'>
                 <input style='visibility: hidden' type="number" id='total-user-pin' name='total-user-pin'>
+                <br>
             </div>
             <div>
                 <label>Enter Admin Pin:</label>
@@ -39,6 +41,7 @@
                 <input type="text" pattern="\d*" maxlength="1" id='admin-pin-3' name='pin-3' oninput='shiftFocus(4, "admin")'>
                 <input type="text" pattern="\d*" maxlength="1" id='admin-pin-4' name='pin-4' oninput='joinPin(4, "admin", true)'>
                 <input style='visibility: hidden' type="number" id='total-admin-pin' name='total-admin-pin'>
+                <br>
             </div>
             <input type="hidden" value="submit" name="btnSubmit">
         </form>
