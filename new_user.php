@@ -15,7 +15,7 @@
 </head>
 <body>
     <header>Rice Purity Leaderboard - New User</header>
-    <div style="width: 75%;">
+    <div style="width: 75%; margin: auto">
         <form id='form' name='form' method="post">
             <div>
                 <label>Create Username</label>
