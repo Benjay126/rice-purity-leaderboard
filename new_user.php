@@ -22,7 +22,7 @@
                 <div>
                     <input type="text" pattern="\d*" maxlength="1" id='id-pin-1' name='pin-1' oninput='shiftFocus(2, "id")'>
                     <input type="text" pattern="\d*" maxlength="1" id='id-pin-2' name='pin-2' oninput='shiftFocus(3, "id")'>
-                    <input type="text" pattern="\d*" maxlength="1" id='id-pin-3' name='pin-3' oninput='joinPin(3, "id", false)'>
+                    <input type="text" pattern="\d*" maxlength="1" id='id-pin-3' name='pin-3' oninput='joinPin(3, "id")'>
                     <input style='visibility: hidden' type="text" id='total-id-pin' name='total-id-pin'>
                 </div>
                 <br>
@@ -33,7 +33,7 @@
                     <input type="text" pattern="\d*" maxlength="1" id='user-pin-1' name='pin-1' oninput='shiftFocus(2, "user")'>
                     <input type="text" pattern="\d*" maxlength="1" id='user-pin-2' name='pin-2' oninput='shiftFocus(3, "user")'>
                     <input type="text" pattern="\d*" maxlength="1" id='user-pin-3' name='pin-3' oninput='shiftFocus(4, "user")'>
-                    <input type="text" pattern="\d*" maxlength="1" id='user-pin-4' name='pin-4' oninput='joinPin(4, "user", false)'>
+                    <input type="text" pattern="\d*" maxlength="1" id='user-pin-4' name='pin-4' oninput='joinPin(4, "user")'>
                     <input style='visibility: hidden' type="number" id='total-user-pin' name='total-user-pin'>
                 </div>
                     <br>
@@ -44,7 +44,7 @@
                     <input type="text" pattern="\d*" maxlength="1" id='admin-pin-1' name='pin-1' oninput='shiftFocus(2, "admin")'>
                     <input type="text" pattern="\d*" maxlength="1" id='admin-pin-2' name='pin-2' oninput='shiftFocus(3, "admin")'>
                     <input type="text" pattern="\d*" maxlength="1" id='admin-pin-3' name='pin-3' oninput='shiftFocus(4, "admin")'>
-                    <input type="text" pattern="\d*" maxlength="1" id='admin-pin-4' name='pin-4' oninput='joinPin(4, "admin", true)'>
+                    <input type="text" pattern="\d*" maxlength="1" id='admin-pin-4' name='pin-4' oninput='joinPin(4, "admin"); submitForm()'>
                     <input style='visibility: hidden' type="number" id='total-admin-pin' name='total-admin-pin'>
                 </div>
                     <br>
@@ -63,13 +63,14 @@
             p.style.paddingBottom = (dimDiff / 2) + 'px';
         }
     }
-    function joinPin(numPins, pinType, submit) {
-        console.log(submit == false);
+    function joinPin(numPins, pinType) {
         const pin = [];
         for (i = 1; i <= numPins; i++) { pin.push(document.getElementById(`${pinType}-pin-${i}`).value); }
         var pinStr = pin.join('');
         document.getElementById(`total-${pinType}-pin`).value = pinStr;
-        if(submit == false) { document.getElementById('form').submit(); }
+    }
+    function submitForm() {
+        document.getElementById('form').submit();
     }
 
     document.getElementById('id-pin-1').focus();
