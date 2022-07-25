@@ -88,7 +88,7 @@
         for($i = 1; $i <= 100; $i++) {
             array_push($empty_answers, 0);
         }
-        $unique_user_sql = "SELECT * FROM users WHERE name='".$_POST['id']."'";
+        $unique_user_sql = "SELECT * FROM users WHERE name='".$_POST['total-user-pin']."'";
         $add_user_sql = "INSERT INTO users (name, init_score, curr_score, pin, answers) VALUES (".$_POST['total-id-pin'].", -1, -1, ".$_POST['total-user-pin'].", '".implode("", $empty_answers)."')";
         $unique_user = $conn->query($unique_user_sql);
         if ($unique_user->num_rows = 0) {
