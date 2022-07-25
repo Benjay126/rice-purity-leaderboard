@@ -90,8 +90,10 @@
             array_push($empty_answers, 0);
         }
         $unique_user_sql = "SELECT * FROM users WHERE name='".$_POST['total-user-pin']."'";
+        echo $unique_user_sql;
         $add_user_sql = "INSERT INTO users (name, init_score, curr_score, pin, answers) VALUES (".$_POST['total-id-pin'].", -1, -1, ".$_POST['total-user-pin'].", '".implode("", $empty_answers)."')";
         $unique_user = $conn->query($unique_user_sql);
+        echo $unique_user;
         if (empty($unique_user)) {
             $add_user = $conn->query($add_user_sql);
             $postVars = array('id', 'total-pin');
@@ -108,7 +110,7 @@
             curl_setopt($ch, CURLOPT_POST, 1);
             curl_setopt($ch, CURLOPT_POSTFIELDS, $postData);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-            $response = curl_exec($ch);
+            //$response = curl_exec($ch);
             curl_close($ch);
         } else {
             echo "User already added.";
